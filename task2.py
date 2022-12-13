@@ -9,17 +9,19 @@ while True:
 
     runner_info = number_and_time.split("::")
 
+    runner_numbers.append(int(runner_info[0]))
+    runner_times.append(int(runner_info[1]))
+    runner_info.pop()
+
+
     if number_and_time == "END":
-        runner_numbers.append(int(runner_info[0]))
-        runner_times.append(int(runner_info[1]))
-        runner_info.pop()
+        break
+    total_runners = len(runner_numbers)
+    average_time = (sum(runner_times)) / (len(runner_times))
+    fastest_time = max(runner_times)
+    slowest_time = min(runner_times)
 
-        total_runners = len(runner_numbers)
-        average_time = (sum(runner_times))/(len(runner_times))
-        fastest_time = max(runner_times)
-        slowest_time = min(runner_times)
-
-        print(total_runners)
-        print(average_time)
-        print(fastest_time)
-        print(slowest_time)
+    print(total_runners)
+    print(average_time)
+    print(fastest_time)
+    print(slowest_time)
